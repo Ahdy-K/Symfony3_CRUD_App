@@ -1,0 +1,23 @@
+{% extends 'AKTodolistBundle::index.html.twig'%}
+
+
+{% block body%}
+<div class="container" style="margin-top:110px;">
+<a href="{{path('ak_todolist_homepage')}}" class="btn btn-primary btn-lg active" >
+<i class="fa fa-home" aria-hidden="true">Home</i></a>
+<h2 class="page-header">{{todo.name}}</h2>
+<ul class="list-group">
+<li class="list-group-item"> Category : {{todo.category}}</li>
+<li class="list-group-item"> Priority : {{todo.priority}}</li>
+<li class="list-group-item"> Date limit : {{todo.dateLimit|date("F jS \\a\\t g:ia")}}</li>
+<li class="list-group-item"> Creation Date : {{todo.creationDate|date("F jS \\a\\t g:ia")}}</li>
+</ul> 
+<p style="margin-top:50px;">
+<h5>Description :</h5>
+{{todo.description}}
+</p>
+
+
+
+</div>
+{% endblock%}

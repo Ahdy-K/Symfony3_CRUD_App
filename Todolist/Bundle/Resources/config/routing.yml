@@ -1,0 +1,22 @@
+ak_todolist_homepage:
+    path:     /todolist/
+    defaults: { _controller: AKTodolistBundle:Todo:todo }
+ak_todolist_create:
+    path:    /todolist/create
+    defaults: {_controller: AKTodolistBundle:Todo:create}
+ak_todolist_edit:
+    path:    /todolist/edit/{id}
+    defaults: {_controller: AKTodolistBundle:Todo:edit}
+    requirements:
+        id:  \d+
+ak_todolist_details:
+    path:     /todolist/details/{id}
+    defaults:
+        _controller: AKTodolistBundle:Todo:details
+    requirements:
+        id:   \d+
+ak_todolist_delete:
+    path:    /todolist/delete/{id}
+    defaults: {_controller: AKTodolistBundle:Todo:delete}
+    requirements:
+      id:    \d+

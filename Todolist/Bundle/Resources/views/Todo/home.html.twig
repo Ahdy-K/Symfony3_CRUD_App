@@ -1,0 +1,28 @@
+{% extends 'AKTodolistBundle::index.html.twig'%}
+
+{% block body%}
+{{ parent() }}
+
+{% block table %}
+
+<table class="table"> <caption>Optional table caption.</caption>
+ <thead> <tr> <th>#</th> 
+ <th>Todo</th> 
+ <th>Todo Date</th> 
+ <th>Action</th> </tr> 
+ </thead> 
+ <tbody>
+ {% for todo in todos %}
+  <tr> <th scope="row">{{todo.id}}</th> 
+ <td>{{todo.name}}</td> 
+ <td>{{todo.dateLimit|date("F jS \\a\\t g:ia")}}</td> 
+ <td><a href="{{ path('ak_todolist_details',{'id':todo.id})}}" class="btn btn-success">View</a>
+ <a href="{{path('ak_todolist_edit',{'id':todo.id})}}" class="btn btn-info">Edit</a>
+ <a href="{{path('ak_todolist_delete',{'id':todo.id})}}"class="btn btn-danger">Delete</a>
+ </td> </tr> 
+ 
+ {% endfor %}
+  </tbody> </table>
+
+{%endblock%}
+{% endblock%}
